@@ -2,6 +2,7 @@ const express = require("express")
 const path = require('path')
 const env = require("dotenv")
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
 const fileupload = require("express-fileupload")
 const errorHandler = require('./middleware/error')
 const connectMongo = require('./config/db')
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(fileupload())
+app.use(cookieParser())
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')))

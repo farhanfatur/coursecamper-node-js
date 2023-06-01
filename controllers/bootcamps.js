@@ -3,7 +3,7 @@ const path = require('path')
 const Bootcamp = require('../models/Bootcamp')
 const AsyncHandler = require('../middleware/async')
 const ErrorResponse = require('../utils/errorResponse')
-const openGeocoder = require('node-open-geocoder');
+// const openGeocoder = require('node-open-geocoder');
 
 // @desc    Get all bootcamps
 // @route   GET /api/v1/bootcamps
