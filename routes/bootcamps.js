@@ -11,14 +11,11 @@ const {
 const Bootcamp = require('../models/Bootcamp')
 const advanceResults = require('../middleware/advanceResults')
 const courseRouter = require('./courses')
-const reviewRouter = require("./reviews")
 const {protect, authorize} = require('../middleware/auth')
 const router = express.Router()
 
 // route
 router.use('/:bootcampId/courses', courseRouter)
-router.use('/:bootcampId/reviews', reviewRouter)
-
 router.route('/:id/photo').put(protect, authorize('publisher', 'admin'), bootcampPhotoUpload)
 router.route('/radius/:longitude/:latitude/:distance').get(getBootcampInRadius)
 router.route("/").get(advanceResults(Bootcamp, 'courses'), getBootcamps).post(protect, authorize('publisher', 'admin'), createBootcamp)
