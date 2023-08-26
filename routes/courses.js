@@ -1,5 +1,5 @@
 const express = require('express')
-const {getCourses, getCourse, addCourse, updateCourse, deleteCourse} = require('../controllers/Courses')
+const {getCourses, getCourse, addCourse, updateCourse, deleteCourse} = require('../controllers/courses')
 const Courses = require('../models/Courses')
 const {protect, authorize} = require('../middleware/auth')
 const advanceResults = require('../middleware/advanceResults')
